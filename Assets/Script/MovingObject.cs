@@ -22,12 +22,20 @@ public class MovingObject : MonoBehaviour
     public float jump_speed;
 
     private Animator animator;
+    public GameObject bolt1;
+    public Transform bolt_tf;
+    public float boltSpeed;
+    private float startPosition;
+    private float distanceLength;
     SpriteRenderer spriteRenderer;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        startPosition = bolt_tf.position.x;
     }
 
     IEnumerator MoveCoroutine()
@@ -102,6 +110,23 @@ public class MovingObject : MonoBehaviour
             animator.SetBool("isRun", false);
             isGround = false;
             rb.AddForce(Vector3.up*jump_speed, ForceMode2D.Impulse);
+        }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetBool("isAttack", true);
+            bolt1.SetActive(true);
+            bolt_tf.Translate(boltSpeed * Time.deltaTime, 0, 0);
+            
+            if(bolt_tf.position.x - startPosition >= 3)
+            {
+                animator.SetBool("isAttack", false);
+            }
+            if(bolt_tf.position.x - startPosition >= 15)
+            {
+                bolt_tf.position = new Vector3(0, 0, 0);
+                bolt1.SetActive(false);
+
+            }
         }
     }
 
