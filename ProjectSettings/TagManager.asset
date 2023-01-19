@@ -8,6 +8,8 @@ TagManager:
   - player
   - ground
   - grass
+  - enemy_slime
+  - bolt
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Player
   - endPoint
-  - 
+  - platform
   - 
   - 
   - 
