@@ -7,6 +7,7 @@ public class wasAttacked : MonoBehaviour
 {
     Animator animator;
     public Image hpBar;
+    public GameObject healthBar;
     Rigidbody2D rb;
     public GameObject attakEffect;
 
@@ -29,7 +30,8 @@ public class wasAttacked : MonoBehaviour
         if(hpBar.fillAmount == 0)
         {
             animator.SetBool("isDead", true);
-            Destroy(this.gameObject, 1.5f);
+            healthBar.SetActive(false);
+            Destroy(this.gameObject, 1.0f);
         }
     }
 

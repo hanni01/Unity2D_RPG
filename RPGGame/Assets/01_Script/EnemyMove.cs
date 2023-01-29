@@ -31,7 +31,7 @@ public class EnemyMove : MonoBehaviour
     {
         Collider2D raycastCollider = Physics2D.OverlapCircle(transform.position, radius, isLayer, minDepth);
         RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * -1, distance, isGroundLayer);
-        if(!aniEnemy.GetBool("isCollided") == true)
+        if(!aniEnemy.GetBool("isCollided")&& !aniEnemy.GetBool("isDead"))
         {
             if(raycastCollider != null)
             {

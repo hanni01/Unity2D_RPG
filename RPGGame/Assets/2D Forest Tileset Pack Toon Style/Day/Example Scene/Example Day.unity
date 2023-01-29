@@ -1256,8 +1256,8 @@ GameObject:
   - component: {fileID: 42191165}
   - component: {fileID: 42191164}
   - component: {fileID: 42191166}
-  m_Layer: 0
-  m_Name: Idle_0
+  m_Layer: 9
+  m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1417,6 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 667252090}
+  healthBar: {fileID: 1992877635}
   attakEffect: {fileID: 1831900759}
 --- !u!95 &42191166
 Animator:
@@ -6140,7 +6141,7 @@ GameObject:
   - component: {fileID: 286863229}
   - component: {fileID: 286863228}
   - component: {fileID: 286863227}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBarBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13082,7 +13083,7 @@ GameObject:
   - component: {fileID: 667252089}
   - component: {fileID: 667252091}
   - component: {fileID: 667252090}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15531,6 +15532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068589428734277748, guid: 27bf31f6833d5b742a6b7841e983dd6b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8068589428734277748, guid: 27bf31f6833d5b742a6b7841e983dd6b,
         type: 3}
@@ -27235,6 +27241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 2104825921}
+  healthBar: {fileID: 1803491506}
   attakEffect: {fileID: 1595164853}
 --- !u!1 &1463676441
 GameObject:
@@ -29494,7 +29501,7 @@ GameObject:
   - component: {fileID: 1553992862}
   - component: {fileID: 1553992861}
   - component: {fileID: 1553992860}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBarBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30569,7 +30576,7 @@ GameObject:
   - component: {fileID: 1595164854}
   - component: {fileID: 1595164856}
   - component: {fileID: 1595164855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hits-3-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33831,7 +33838,7 @@ GameObject:
   - component: {fileID: 1803491507}
   - component: {fileID: 1803491509}
   - component: {fileID: 1803491508}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34530,7 +34537,7 @@ GameObject:
   - component: {fileID: 1831900760}
   - component: {fileID: 1831900762}
   - component: {fileID: 1831900761}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hits-3-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38142,7 +38149,7 @@ GameObject:
   - component: {fileID: 1992877636}
   - component: {fileID: 1992877638}
   - component: {fileID: 1992877637}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40754,7 +40761,7 @@ GameObject:
   - component: {fileID: 2104825920}
   - component: {fileID: 2104825922}
   - component: {fileID: 2104825921}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: hpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

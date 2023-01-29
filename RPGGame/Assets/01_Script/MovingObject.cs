@@ -133,5 +133,5 @@ public class MovingObject : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
             animator.SetBool("isJump", false);
             isGround = true;
-        }
+    }
 }
