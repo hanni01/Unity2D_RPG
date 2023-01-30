@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class charRespawn : MonoBehaviour
 {
     public GameObject Player;
     public GameObject[] respawnP = new GameObject[4];
+    public bool isFloorEnd = false;
     GameObject nearRespawn;
     float dist;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.name == "floorEnd")
         {
+            isFloorEnd = true;
             transform.position = CalculateDist().transform.position;
         }
     }

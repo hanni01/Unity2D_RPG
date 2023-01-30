@@ -27,6 +27,8 @@ public class MovingObject : MonoBehaviour
 
     public Animator aniSuccessAttack;
 
+    public bool isAttacked = false;
+
 
     void Start()
     {
@@ -131,7 +133,15 @@ public class MovingObject : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "ground")
+        {
             animator.SetBool("isJump", false);
             isGround = true;
+        }
+        if (other.gameObject.layer == 9)
+        {
+            isAttacked = true;
+            rb.AddForce(Vector3.up * 7, ForceMode2D.Impulse);
+        }
     }
 }
