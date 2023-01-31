@@ -27,6 +27,7 @@ public class charRespawn : MonoBehaviour
         {
             if(dist > Vector2.Distance(Player.transform.position, respawnP[i].transform.position))
             {
+                dist = Vector2.Distance(Player.transform.position, respawnP[i].transform.position);
                 nearRespawn = respawnP[i];
             }
         }

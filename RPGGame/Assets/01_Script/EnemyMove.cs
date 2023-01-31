@@ -21,6 +21,7 @@ public class EnemyMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         aniEnemy = GetComponent<Animator>();
+        Physics2D.IgnoreLayerCollision(9, 9);
     }
 
     private void Update() {

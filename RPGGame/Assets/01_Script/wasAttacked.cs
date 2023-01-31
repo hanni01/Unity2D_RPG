@@ -10,6 +10,7 @@ public class wasAttacked : MonoBehaviour
     public GameObject healthBar;
     Rigidbody2D rb;
     public GameObject attakEffect;
+    public GameObject player;
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -29,6 +30,7 @@ public class wasAttacked : MonoBehaviour
 
         if(hpBar.fillAmount == 0)
         {
+            Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
             animator.SetBool("isDead", true);
             healthBar.SetActive(false);
             Destroy(this.gameObject, 1.0f);

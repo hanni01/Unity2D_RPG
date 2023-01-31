@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class MovingObject : MonoBehaviour
     public Animator aniSuccessAttack;
 
     public bool isAttacked = false;
+
+    GameObject[] bolts;
 
 
     void Start()
@@ -97,9 +100,14 @@ public class MovingObject : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.C))
+
+        bolts = GameObject.FindGameObjectsWithTag("bolt");
+
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if(transform.localScale.x == 0.5f)
+            if (bolts.Length > 3) return;
+
+            if (transform.localScale.x == 0.5f)
             {
                 this.bolt1.transform.localScale = new Vector3(4, 4, 2);
             }
