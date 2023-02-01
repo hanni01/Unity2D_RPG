@@ -91,7 +91,7 @@ public class MovingObject : MonoBehaviour
         }
 
         //점프할 때 땅과의 레이어 충돌 무시
-        if(rb.velocity.y >= 0)
+        if(rb.velocity.y > 0)
         {
             Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, true);
         }else{
@@ -106,6 +106,7 @@ public class MovingObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (bolts.Length > 3) return;
+
 
             if (transform.localScale.x == 0.5f)
             {
@@ -131,15 +132,6 @@ public class MovingObject : MonoBehaviour
         
     }
 
-    private void disappearBall(GameObject obj)
-    {
-        if(aniSuccessAttack.GetBool("isCollided"))
-        {
-            Debug.Log("collided");
-            Destroy(obj);
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "ground")
         {
@@ -149,7 +141,7 @@ public class MovingObject : MonoBehaviour
         if (other.gameObject.layer == 9)
         {
             isAttacked = true;
-            rb.AddForce(Vector3.up * 7, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.up * 5, ForceMode2D.Impulse);
         }
     }
 }
