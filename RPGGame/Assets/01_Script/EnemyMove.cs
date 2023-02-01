@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -26,24 +27,27 @@ public class EnemyMove : MonoBehaviour
 
     private void Update() {
         aniEnemy.SetBool("isRun", false);
+        rb.velocity= Vector3.zero;
     }
 
     void FixedUpdate()
     {
+        rb.velocity = Vector3.zero;
         Collider2D raycastCollider = Physics2D.OverlapCircle(transform.position, radius, isLayer, minDepth);
         RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * -1, distance, isGroundLayer);
         if(!aniEnemy.GetBool("isCollided")&& !aniEnemy.GetBool("isDead"))
         {
             if(raycastCollider != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, raycastCollider.transform.position, Time.deltaTime * speed);
                 if(transform.position.x < player.GetComponent<Transform>().position.x)
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
                 }
                 else
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
                 }
                 aniEnemy.SetBool("isRun", true);
             }
