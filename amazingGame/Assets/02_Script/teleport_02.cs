@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class teleport_01 : MonoBehaviour
+public class teleport_02 : MonoBehaviour
 {
     public Transform player;
-    public Transform teleportD;
+    public Transform teleportS;
     bool trigger_teleport;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,12 +15,12 @@ public class teleport_01 : MonoBehaviour
 
     private void Update()
     {
-        if(trigger_teleport) 
+        if (trigger_teleport)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
                 trigger_teleport = false;
-                player.position = teleportD.position;
+                player.position = teleportS.position;
             }
         }
     }
